@@ -1,27 +1,7 @@
-import { IGetParams, NewsResponse, Field } from "./types";
-
-const RssJsonAPI = "https://api.rss2json.com/v1/api.json?rss_url";
-const VedomostiAPI = "https://www.vedomosti.ru/rss/rubric";
-
-export default async function getNews({ category, fields }: IGetParams) {
-  const url = `${RssJsonAPI}=${VedomostiAPI}/${category}`;
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error("Server Error");
-    }
-
-    const { items } = (await response.json()) as NewsResponse;
-
-    return items.map((item) =>
-      Object.entries(item).reduce((result, [field, value]) => {
-        if (!fields.includes(field as Field)) {
-          return result;
-        }
-        return { ...result, [field]: value };
-      }, {})
-    );
-  } catch (error) {
-    console.error(error);
+export function calculateSum(value1: number, value2: number): number {
+  if (isNaN(+value1) || isNaN(+value2)) {
+    throw new Error("Incorrect input values");
   }
+
+  return value1 + value2;
 }

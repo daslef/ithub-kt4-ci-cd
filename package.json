@@ -1,7 +1,7 @@
 {
-  "name": "@daslef/node-library",
+  "name": "@daslef/node-math-library",
   "version": "0.0.0-semantically-released",
-  "description": "vedomosti news wrapper",
+  "description": "node library for basic math operations",
   "type": "module",
   "main": "index.js",
   "publishConfig": {
@@ -9,11 +9,12 @@
   },
   "scripts": {
     "dev": "tsx index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daslef/node-library-vedomosti.git"
+    "url": "git+https://github.com/daslef/ithub-kt4-ci-cd.git"
   },
   "keywords": [
     "parser",
@@ -22,15 +23,19 @@
   "author": "Lex T.",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/daslef/node-library-vedomosti/issues"
+    "url": "https://github.com/daslef/ithub-kt4-ci-cd/issues"
   },
-  "homepage": "https://github.com/daslef/node-library-vedomosti#readme",
+  "homepage": "https://github.com/daslef/ithub-kt4-ci-cd#readme",
   "devDependencies": {
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.9.1",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
+    "jest": "^29.7.0",
     "lefthook": "^1.8.4",
     "semantic-release": "^24.2.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   },
@@ -39,4 +44,4 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   }
-} 
+}
